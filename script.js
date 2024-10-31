@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github Heatmap Color
 // @namespace    http://tampermonkey.net/
-// @version      2024-10-31
+// @version      V1
 // @description  Change GitHub contribution graph colours
 // @author       You
 // @match        https://github.com/*
@@ -17,12 +17,41 @@
     const LEVEL1 = "#B2ADFB";
     const LEVEL0 = "#161b22";
 
-    // Function to update colors
     function updateColors() {
-        // Get all contribution squares using the correct class name
-        const elements = document.getElementsByClassName("ContributionCalendar-day");
+        // get heat map squares
+        const heatBlocks = document.getElementsByClassName("ContributionCalendar-day");
 
-        Array.from(elements).forEach(element => {
+        // get activity blob
+        const blobColor = document.getElementsByClassName("js-highlight-blob");
+
+        Array.from(blobColor).forEach(element => {
+                                // update fill
+                element.setAttribute("stroke", LEVEL3);
+        });
+
+        // select all the halloween activity elements
+        const halloweenActivityAxes = document.querySelectorAll('.halloween-activity-overview .activity-overview-axis');
+        const halloweenActivityPoints = document.querySelectorAll('.halloween-activity-overview .activity-overview-point');
+
+        // select the regular activity elements
+        const activityAxes = document.querySelectorAll('.activity-overview-axis');
+        const activityPoints = document.querySelectorAll('.activity-overview-point');
+
+        // change stroke color
+        const changeStrokeColor = (elements, color) => {
+            elements.forEach(element => {
+                element.style.stroke = LEVEL1;
+            });
+        };
+
+        // call function to change color
+        changeStrokeColor(halloweenActivityAxes, 'new-color-for-halloween-activity-axis');
+        changeStrokeColor(halloweenActivityPoints, 'new-color-for-halloween-activity-point');
+        changeStrokeColor(activityAxes, 'new-color-for-activity-axis');
+        changeStrokeColor(activityPoints, 'new-color-for-activity-point');
+
+
+        Array.from(heatBlocks).forEach(element => {
             // get contribution level
             const level = element.getAttribute("data-level");
 
