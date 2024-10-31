@@ -3,6 +3,12 @@
 This work builds off of information i found from 2019 on this site: https://dev.to/abdurrahmaanj/how-to-change-your-github-contribution-graph-colour-to-something-cool-34gg <br><br>
 The reason I made this script is because I don't like the halloween update
 <br><br>
+<h2>To do:</h2>
+<ul>
+  <li>Change the colours of the Activity overview</li>
+  <li>Change the colours of Contribution activity</li>
+</ul>
+<h2>About</h2>
 I made this using Tamper Monkey. To use get the Tamper Monkey chrome extension and create a new script, and then paste my code in and change the hex values to the colours you want. I recommend having Level 4 as the darkest color then making the color lighter as you go down. Enjoy!
 <br>
 <h3>Before</h3>
@@ -10,4 +16,4 @@ I made this using Tamper Monkey. To use get the Tamper Monkey chrome extension a
 
 <h3>After</h3>
 <img width="787" alt="image" src="https://github.com/user-attachments/assets/392ed2a5-776f-4b4e-85ff-c75ca24cdb45">
-
+<br>
