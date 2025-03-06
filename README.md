@@ -1,5 +1,4 @@
 # ColorMap
-<h2><em>NO LONGER WORKING</em></h2>
 <h2>Script to change Github heat map colour</h2>
 This work builds off of information i found from 2019 on this site: https://dev.to/abdurrahmaanj/how-to-change-your-github-contribution-graph-colour-to-something-cool-34gg <br><br>
 The reason I made this script is because I don't like the halloween update
